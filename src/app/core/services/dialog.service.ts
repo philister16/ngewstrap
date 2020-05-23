@@ -19,7 +19,7 @@ export class DialogService {
       value: null,
       continue: 'Continue'
     };
-    const ref = this.modal.open(DialogInputComponent);
+    const ref = this.modal.open(DialogInputComponent, { centered: true, size: 'sm' });
     ref.componentInstance.data = data;
     return ref.result;
   }
