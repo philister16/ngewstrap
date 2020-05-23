@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { BaseComponent } from './components/base/base.component';
 import { FormsModule } from '@angular/forms';
-import { NgbitIndicatorButtonModule } from '@ngbits/ngbits';
 import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
 import { FaIconModule } from '../fa-icon/fa-icon.module';
 import { IndicatorButtonComponent } from './components/indicator-button/indicator-button.component';
@@ -21,7 +20,6 @@ const sharedDeclarations = [
     CommonModule,
     FaIconModule,
     FormsModule,
-    NgbitIndicatorButtonModule
   ],
   exports: sharedDeclarations
 })
