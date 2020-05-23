@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "docs": "npx compodoc -p compodoc.json"
   },
   "private": true,
   "dependencies": {
@@ -15,10 +16,20 @@
     "@angular/common": "~9.0.6",
     "@angular/compiler": "~9.0.6",
     "@angular/core": "~9.0.6",
+    "@angular/fire": "^6.0.0",
     "@angular/forms": "~9.0.6",
+    "@angular/localize": "^9.1.1",
     "@angular/platform-browser": "~9.0.6",
     "@angular/platform-browser-dynamic": "~9.0.6",
     "@angular/router": "~9.0.6",
+    "@fortawesome/angular-fontawesome": "^0.6.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@ng-bootstrap/ng-bootstrap": "^6.0.2",
+    "@ngbits/ngbits": "^0.4.1",
+    "bootstrap": "^4.4.1",
+    "firebase": "^7.14.4",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -28,6 +39,7 @@
     "@angular/cli": "~9.0.6",
     "@angular/compiler-cli": "~9.0.6",
     "@angular/language-service": "~9.0.6",
+    "@compodoc/compodoc": "^1.1.11",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
@@ -42,6 +54,11 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
-    "typescript": "~3.7.5"
+    "typescript": "~3.7.5",
+    "@angular-devkit/architect": "~0.900",
+    "firebase-tools": "^8.0.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1"
   }
 }

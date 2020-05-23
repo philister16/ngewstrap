@@ -1,0 +1,4 @@
+<ngb-toast *ngFor="let f of flash.flashes" [header]="f.header" [autohide]="true" [delay]="f.delay || 5000"
+    (hide)="flash.remove(f)" [class]="f.classname">
+    {{ f.message }}
+</ngb-toast>

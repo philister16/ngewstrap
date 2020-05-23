@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ data.title }}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss(null)">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <p>
+        {{ data.content }}
+    </p>
+    <div class="form-group">
+        <label>{{ data.label }}</label>
+        <input #password [type]="data.inputType" class="form-control" [value]="data.value">
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-outline-secondary mr-2" (click)="activeModal.dismiss(null)">Cancel</button>
+    <button class="btn btn-primary" (click)="activeModal.close(password.value)">{{ data.continue }}</button>
+</div>

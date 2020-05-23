@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ngewstrap": {
+      "hosting": {
+        "ngewstrap": [
+          "ngewstrap"
+        ]
+      }
+    }
+  }
+}

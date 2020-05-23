@@ -1,0 +1,6 @@
+<app-page-header>
+    <h3>Account</h3>
+</app-page-header>
+<app-user-infos [userInfos]="currentUser?.userInfos"></app-user-infos>
+<app-user-email [email]="currentUser?.email" [emailVerified]="currentUser?.emailVerified"></app-user-email>
+<app-user-password></app-user-password>

@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "ngewstrap",
+      "public": "dist/ngewstrap",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

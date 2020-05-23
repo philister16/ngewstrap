@@ -1,0 +1,43 @@
+<header>
+    <nav class="navbar navbar-dark bg-primary fixed-top shadow">
+        <a class="navbar-brand" routerLink="/">
+            <img src="assets/ngew.svg" alt="Logo" height="24">
+        </a>
+        <nav>
+            <a routerLink="/user" routerLinkActive="active" class="text-light ml-3">
+                <fa-icon icon="user-circle" size="lg"></fa-icon>
+            </a>
+            <span class="app-pointer text-light ml-3" (click)="auth.logout()">
+                <fa-icon icon="sign-out-alt" size="lg"></fa-icon>
+            </span>
+            <span (click)="isCollapsed = !isCollapsed" class="text-light app-pointer d-md-none ml-3">
+                <fa-icon icon="bars" size="lg"></fa-icon>
+            </span>
+        </nav>
+        <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto d-md-none">
+                <li *ngFor="let i of mainMenu" class="nav-item">
+                    <a class="nav-link" routerLink="{{ i.route }}" routerLinkActive="active">{{ i.title }}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="h-100 d-flex">
+    <nav class="d-none d-md-block sidebar">
+        <div class="sidebar-sticky py-3">
+            <ul class="nav flex-column">
+                <li *ngFor="let i of mainMenu" class="nav-item">
+                    <a class="nav-link active" routerLink="{{ i.route }}" routerLinkActive="active">
+                        {{ i.title }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main role="main" class="bg-light flex-grow-1">
+        <div class="container-fluid py-3">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>

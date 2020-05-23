@@ -1,0 +1,5 @@
+<button [class]="btnClass" [ngClass]="{ 'cursor-arrow': disabled }" [type]="btnType" (click)="onClick($event)"
+    [disabled]="disabled">
+    <fa-icon *ngIf="indicate" icon="circle-notch" [spin]="true" class="mr-2"></fa-icon>
+    <ng-content></ng-content>
+</button>

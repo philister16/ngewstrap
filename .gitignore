@@ -44,3 +44,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# For any sensitive keys and data
+private.ts
+
+# Documentation is generated dynamically
+/documentation

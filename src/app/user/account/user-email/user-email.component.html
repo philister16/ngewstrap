@@ -1,0 +1,41 @@
+<div class="card shadow-sm my-3">
+    <form [formGroup]="emailForm" (ngSubmit)="onSave()">
+        <div class="card-body">
+            <h5 class="card-title">Email</h5>
+            <div *ngIf="!emailVerified" class="alert alert-warning d-flex justify-content-between align-items-center">
+                <span>
+                    You have not yet verified your email. Click the link we sent to your inbox.
+                </span>
+                <app-indicator-button btnClass="btn btn-sm btn-outline-secondary" [indicate]="isSending"
+                    (btnClick)="resendEmailVerification()">Resend</app-indicator-button>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <input type="email" class="form-control" readonly formControlName="email">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div *ngIf="!hasNewEmailField">
+                        <button class="btn btn-outline-secondary" (click)="hasNewEmailField = !hasNewEmailField">Change
+                            email</button>
+                    </div>
+                    <div *ngIf="hasNewEmailField && !isLoading" class="d-flex">
+                        <div class="form-group flex-grow-1">
+                            <input
+                                [ngClass]="{ 'is-invalid': emailForm.controls.newEmail.invalid && emailForm.controls.newEmail.touched }"
+                                type="email" class="form-control" placeholder="New email" formControlName="newEmail">
+                            <div class="invalid-feedback">Provide a valid email address</div>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary ml-2">Save</button>
+                        </div>
+                    </div>
+                    <div *ngIf="isLoading">
+                        <fa-icon icon="circle-notch" [spin]="true" class="mr-2"></fa-icon>Updating email...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

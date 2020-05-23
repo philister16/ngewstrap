@@ -1,0 +1,77 @@
+<div class="d-flex justify-content-center align-items-center bg-light h-100">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="logo d-flex justify-content-center align-items-center">
+                <a routerLink="/">
+                    <img src="assets/ngew.svg" alt="Logo" width="48" />
+                </a>
+            </div>
+            <h3 class="card-title">
+                <ng-container *ngTemplateOutlet="title"></ng-container>
+            </h3>
+            <form *ngIf="mode !== Mode.ACTION && !alertMessage; else action" #authForm="ngForm"
+                (ngSubmit)="onSubmit(authForm)" class="py-3">
+                <div *ngIf="mode === Mode.SIGNUP" class="form-group">
+                    <label>Firstname</label>
+                    <input ngModel type="text" name="firstname" class="form-control" placeholder="Firstname">
+                </div>
+                <div *ngIf="mode === Mode.SIGNUP" class="form-group">
+                    <label>Lastname</label>
+                    <input ngModel type="text" name="lastname" class="form-control" placeholder="Lastname">
+                </div>
+                <div *ngIf="mode !== Mode.RESET" class="form-group">
+                    <label>Email</label>
+                    <input #email="ngModel" ngModel email required type="email" name="email" class="form-control"
+                        placeholder="you@email.com"
+                        [ngClass]="{ 'is-invalid': email.invalid && (email.touched || authForm.submitted) }">
+                    <div class="invalid-feedback">Provide a valid email address</div>
+                </div>
+                <div *ngIf="mode !== Mode.FORGOT" class="form-group">
+                    <label>Password</label>
+                    <input #password="ngModel" ngModel required minlength="8" type="password" name="password"
+                        class="form-control" placeholder="Password"
+                        [ngClass]="{ 'is-invalid': password.invalid && (password.touched || authForm.submitted) }">
+                    <div class="invalid-feedback float-left" style="width: auto;">Password must be minimum 8 characters
+                    </div>
+                    <div class="text-right float-right">
+                        <small class="text-muted form-text">{{ password.value?.length || 0 }}/8</small>
+                    </div>
+                </div>
+                <div class="py-3">
+                    <app-indicator-button [indicate]="isLoading" btnClass="btn btn-primary" btnType="submit">
+                        <ng-container *ngTemplateOutlet="buttonText"></ng-container>
+                    </app-indicator-button>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <a *ngIf="mode !== Mode.LOGIN" routerLink="../login" class="btn btn-link">Login</a>
+            <a *ngIf="mode !== Mode.SIGNUP" routerLink="../signup" class="btn btn-link">Signup</a>
+            <a *ngIf="mode !== Mode.FORGOT && mode !== Mode.RESET" routerLink="../forgot" class="btn btn-link">Forgot
+                password</a>
+
+        </div>
+    </div>
+</div>
+
+<ng-template #action>
+    <div class="action-box">
+        <span *ngIf="isLoading">Verifying&hellip;</span>
+        <ngb-alert [type]="alertType" [dismissible]="false">{{ alertMessage }}</ngb-alert>
+    </div>
+    <div *ngIf="navCountdown" class="text-center">Redirecting in {{ navCountdown }}&hellip;</div>
+</ng-template>
+
+<ng-template #title>
+    <span *ngIf="mode === Mode.LOGIN">Login</span>
+    <span *ngIf="mode === Mode.SIGNUP">Sign up</span>
+    <span *ngIf="mode === Mode.FORGOT">Forgot password</span>
+    <span *ngIf="mode === Mode.RESET">Reset password</span>
+</ng-template>
+
+<ng-template #buttonText>
+    <span *ngIf="mode === Mode.LOGIN">Login</span>
+    <span *ngIf="mode === Mode.SIGNUP">Sign up</span>
+    <span *ngIf="mode === Mode.FORGOT">Request reset</span>
+    <span *ngIf="mode === Mode.RESET">Reset</span>
+</ng-template>

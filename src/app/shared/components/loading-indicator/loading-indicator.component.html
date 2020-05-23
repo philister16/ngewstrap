@@ -1,0 +1,6 @@
+<div *ngIf="isLoading$ | async" class="loading-indicator">
+    <div class="text-center">
+        <fa-icon icon="circle-notch" [spin]="true"></fa-icon>
+        <p>Loading</p>
+    </div>
+</div>
