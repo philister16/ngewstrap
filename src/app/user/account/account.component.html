@@ -1,6 +1,7 @@
 <app-page-header>
     <h3>Account</h3>
 </app-page-header>
-<app-user-infos [userInfos]="currentUser?.userInfos"></app-user-infos>
-<app-user-email [email]="currentUser?.email" [emailVerified]="currentUser?.emailVerified"></app-user-email>
+<app-user-infos [userInfos]="(user.currentUser$ | async)?.userInfos"></app-user-infos>
+<app-user-email [email]="(user.currentUser$ | async)?.email"
+    [emailVerified]="(user.currentUser$ | async)?.emailVerified"></app-user-email>
 <app-user-password></app-user-password>
