@@ -4,12 +4,22 @@
             <img src="assets/ngew.svg" alt="Logo" height="24">
         </a>
         <nav>
-            <a routerLink="/user" routerLinkActive="active" class="text-light ml-3">
-                <fa-icon icon="user-circle" size="lg"></fa-icon>
-            </a>
-            <span class="app-pointer text-light ml-3" (click)="auth.logout()">
-                <fa-icon icon="sign-out-alt" size="lg"></fa-icon>
-            </span>
+            <!-- <div ngbDropdown class="d-inline-block">
+                <span ngbDropdownToggle class="account-dropdown app-pointer text-light ml-3">
+                    <app-profile-image [userInitials]="userInitials" src="assets/man3.png"></app-profile-image>
+                </span>
+                <div ngbDropdownMenu class="dropdown-menu-right shadow" aria-labelledby="profileDropdown">
+                    <div ngbDropdownItem class="d-flex align-items-center" style="cursor: default;">
+                        <app-profile-image></app-profile-image>
+                        <span class="ml-1 text-muted"><small>tester1@rhinerock.com</small></span>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <a routerLink="/user" routerLinkActive="active" ngbDropdownItem>Account</a>
+                    <button ngbDropdownItem>Settings</button>
+                    <div class="dropdown-divider"></div>
+                    <button (click)="auth.logout()" ngbDropdownItem>Sign out</button>
+                </div>
+            </div> -->
             <span (click)="isCollapsed = !isCollapsed" class="text-light app-pointer d-md-none ml-3">
                 <fa-icon icon="bars" size="lg"></fa-icon>
             </span>

@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
 import { FaIconModule } from '../fa-icon/fa-icon.module';
 import { IndicatorButtonComponent } from './components/indicator-button/indicator-button.component';
+import { ProfileImageComponent } from './components/profile-image/profile-image.component';
 
 const sharedDeclarations = [
   BaseComponent,
   PageHeaderComponent,
   LoadingIndicatorComponent,
-  IndicatorButtonComponent
+  IndicatorButtonComponent,
+  ProfileImageComponent
 ];
 
 @NgModule({

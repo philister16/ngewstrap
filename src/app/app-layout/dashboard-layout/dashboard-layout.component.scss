@@ -37,3 +37,7 @@ main {
     margin-left: auto;
   }
 }
+
+.account-dropdown::after {
+  content: none;
+}
