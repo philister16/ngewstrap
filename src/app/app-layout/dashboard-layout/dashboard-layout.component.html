@@ -1,33 +1,34 @@
 <header>
     <nav class="navbar navbar-dark bg-primary fixed-top shadow">
         <a class="navbar-brand" routerLink="/">
-            <img src="assets/ngew.svg" alt="Logo" height="24">
+            <img src="assets/ngew.svg" alt="Logo" height="26">
         </a>
         <nav>
-            <!-- <div ngbDropdown class="d-inline-block">
+            <div ngbDropdown class="d-inline-block">
                 <span ngbDropdownToggle class="account-dropdown app-pointer text-light ml-3">
-                    <app-profile-image [userInitials]="userInitials" src="assets/man3.png"></app-profile-image>
+                    <div class="navbar-thumbnail">
+                        <app-profile-image [userInitials]="userInitials" src="assets/man1.png"
+                            className="bg-light text-secondary">
+                        </app-profile-image>
+                    </div>
                 </span>
                 <div ngbDropdownMenu class="dropdown-menu-right shadow" aria-labelledby="profileDropdown">
-                    <div ngbDropdownItem class="d-flex align-items-center" style="cursor: default;">
-                        <app-profile-image></app-profile-image>
-                        <span class="ml-1 text-muted"><small>tester1@rhinerock.com</small></span>
-                    </div>
-                    <div class="dropdown-divider"></div>
                     <a routerLink="/user" routerLinkActive="active" ngbDropdownItem>Account</a>
                     <button ngbDropdownItem>Settings</button>
                     <div class="dropdown-divider"></div>
                     <button (click)="auth.logout()" ngbDropdownItem>Sign out</button>
+                    <div class="dropdown-divider"></div>
+                    <span ngbDropdownItem class="text-muted"><small>Version {{ version }}</small></span>
                 </div>
-            </div> -->
+            </div>
             <span (click)="isCollapsed = !isCollapsed" class="text-light app-pointer d-md-none ml-3">
                 <fa-icon icon="bars" size="lg"></fa-icon>
             </span>
         </nav>
         <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto d-md-none">
-                <li *ngFor="let i of mainMenu" class="nav-item">
-                    <a class="nav-link" routerLink="{{ i.route }}" routerLinkActive="active">{{ i.title }}</a>
+                <li *ngFor="let i of mainMenu" class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="{{ i.route }}">{{ i.title }}</a>
                 </li>
             </ul>
         </div>

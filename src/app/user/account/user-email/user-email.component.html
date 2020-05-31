@@ -3,7 +3,7 @@
         <div class="card-body">
             <h5 class="card-title">Email</h5>
             <div *ngIf="!emailVerified" class="alert alert-warning d-flex justify-content-between align-items-center">
-                <span>
+                <span class="mr-2">
                     You have not yet verified your email. Click the link we sent to your inbox.
                 </span>
                 <app-indicator-button btnClass="btn btn-sm btn-outline-secondary" [indicate]="isSending"

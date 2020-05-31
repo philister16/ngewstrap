@@ -1,10 +1,11 @@
 figure {
+    height: 100%;
     margin: 0;
     padding: 0;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    display: inline-block;
+    border-radius: 50%;
 }
 
 span.text-wrapper {

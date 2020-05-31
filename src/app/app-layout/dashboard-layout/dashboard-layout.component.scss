@@ -38,6 +38,18 @@ main {
   }
 }
 
+.navbar-brand {
+  padding-top: 0;
+}
+
 .account-dropdown::after {
   content: none;
+}
+
+.navbar-thumbnail {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
 }

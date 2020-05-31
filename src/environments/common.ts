@@ -3,4 +3,5 @@ export const common = {
     afterLoginPath: '/',
     afterSignupPath: '/',
     afterLogoutPath: '/auth/login',
+    version: '0.0.0'
 };

@@ -1,7 +1,6 @@
-<figure style="background-image: url('{{ src }}');"
-    [ngStyle]="{ 'width': size, 'height': size, 'borderRadius': borderRadius }">
+<figure style="background-image: url('{{ src }}');" class="{{ className }}">
     <img [src]="src" [alt]="alt" class="sr-only">
-    <span *ngIf="!src" class="text-wrapper text-primary">
-        <span [style.fontSize]="fontSize">{{ userInitials }}</span>
+    <span *ngIf="!src" class="text-wrapper">
+        <span>{{ userInitials }}</span>
     </span>
 </figure>
